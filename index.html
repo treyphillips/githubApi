@@ -4,16 +4,19 @@
   <meta charset="UTF-8">
   <title>Etsy API Recreation</title>
   <link rel="stylesheet" type="text/css" href="main.css">
-
+  <link rel="stylesheet" type="text/css" href="bower_components/octicons//octicons/octicons.css">
 </head>
 <body>
 
   <script type="text/template" class="repoTemplate">
-    <li class="<%= name %>-bg">
-      <%= name %>
-    </li>
+    <div id="repoData">
+      <a class="repo-link" href="<%= repoUrl %>"><span class="reponame"><%= name %></span></a>
+      <li class="<%= name %>-bg">
+        <%= name %>
+      </li>
+  </div>
   </script>
-
+<script src="bower_components/moment/moment.js"></script>
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/underscore/underscore.js"></script>
 <script src="token.js"></script>
