@@ -8,19 +8,41 @@
 </head>
 <body>
 
-  <script type="text/template" class="repoTemplate">
+  <div id="test"></div>
+
+  <script type="text/template" data-template-name="repoTemplate">
     <div id="repoData">
       <a class="repo-link" href="<%= repoUrl %>"><span class="reponame"><%= name %></span></a>
-      <li class="<%= name %>-bg">
+      <li class="<%= name %>">
         <%= name %>
       </li>
   </div>
   </script>
+
+
 <script src="bower_components/moment/moment.js"></script>
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/underscore/underscore.js"></script>
-<script src="token.js"></script>
+
+<script type="text/template" id="repo">
+  <!-- <div id="repoData"> -->
+    <li>
+    <a href="<%= repoUrl %>"><%= name %></a>
+    <%= name %>
+    <%= updated %>
+    <%= language %>
+    <%= stargazers %>
+    <%= forks %>
+    <%= repoUrl %>
+    <%= fullName %>
+  </li>
+
+</script>
+
+
+
 <script src="main.js"></script>
+<script src="token.js"></script>
 
 </body>
 </html>
