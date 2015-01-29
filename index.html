@@ -7,40 +7,47 @@
   <link rel="stylesheet" type="text/css" href="bower_components/octicons//octicons/octicons.css">
 </head>
 <body>
+  <div class="topper">
+    <img src="header.png">
+  </div>
+  <div id="sideInfo"></div>
 
   <div id="test"></div>
 
-  <script type="text/template" data-template-name="repoTemplate">
-    <div id="repoData">
-      <a class="repo-link" href="<%= repoUrl %>"><span class="reponame"><%= name %></span></a>
-      <li class="<%= name %>">
-        <%= name %>
-      </li>
-  </div>
-  </script>
-
-
-<script src="bower_components/moment/moment.js"></script>
-<script src="bower_components/jquery/dist/jquery.js"></script>
-<script src="bower_components/underscore/underscore.js"></script>
 
 <script type="text/template" id="repo">
   <!-- <div id="repoData"> -->
     <li>
-    <a href="<%= repoUrl %>"><%= name %></a>
     <%= name %>
-    <%= updated %>
     <%= language %>
-    <%= stargazers %>
+    <%= stargazers_count %>
     <%= forks %>
-    <%= repoUrl %>
-    <%= fullName %>
+    <%= full_name %>
+  </li>
+
+</script>
+
+<script type="text/template" id="sideBar">
+  <li>
+   <a><img src="<%= avatar_url %>"></a>
+    <%= name %>
+    <%= login %>
+    <span class="octicon octicon-organization"><%= company %></span>
+    <span class="octicon octicon-mail"><%= email %></span>
+    <span class="octicon octicon-clock"><%= created_at %></span>
+    <%= followers %>
+    <%= starred_url %>
+    <%= following %>
+    <%= organizations_url %>
   </li>
 
 </script>
 
 
 
+<script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="main.js"></script>
 <script src="token.js"></script>
 

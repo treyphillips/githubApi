@@ -26,26 +26,23 @@
     })
 
     .done(function(data) {
-      
+
     });
 
-    $.getJSON("https://api.github.com/users/treyphillips/repos").done(function(item) {
-      var repoSort = _.sortBy(item, 'updated_at').reverse();
+    $.getJSON("https://api.github.com/users/treyphillips/repos").done(function(items) {
+      var repoSort = _.sortBy(items, 'updated_at').reverse();
       _.each(repoSort, function(item) {
-        var repoData = {
-          name: item.name,
-          updated: moment(item.updated_at).fromNow(),
-          language: item.language,
-          stargazers: item.stargazers_count,
-          forks: item.forks,
-          repoUrl: item.html_url,
-          fullName: item.full_name
-        };
-
-
-        renderTemplate('#repo','#test',repoData);
+        renderTemplate('#repo','#test',item);
 
       });
     });
+
+
+    $.getJSON("https://api.github.com/users/treyphillips").done(function(result) {
+        renderTemplate('#sideBar','#sideInfo',result);
+        // console.log(result);
+
+    });
+
   });
 })();
